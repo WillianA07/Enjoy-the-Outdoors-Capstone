@@ -1,0 +1,58 @@
+body {
+    background-image: url("/images/home.png");
+    background-position: absolute;
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+
+
+    /* background-image: url("/images/Bond-StoryImage_3.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh; */
+}
+
+#parkBtn {
+    /* background-color: #0d0c0d02; */
+    border: 1px solid black;
+    /* box-shadow: 5px 10px 8px #888888; */
+
+}
+#parkBtn:hover {
+    /* background-color: #0d0c0d02; */
+    color: rgb(76, 76, 160);
+    background-color: #d8ddcd;
+}
+
+#mountBtn {
+    border: 1px solid black;
+}
+
+#mountBtn:hover {
+    color: rgb(76, 76, 160);
+    background-color: #d8ddcd;
+}
+
+.txtCenter {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+q {
+    font-style: italic;
+    background-color: #d8ddcd;
+}
+
+/* .setCardMinSize {
+    width: 20rem;
+    min-height: 20rem;
+    margin: 0;
+    padding: 0;
+} */
+.card{
+    width: 20rem;
+   height: 20rem;
+margin: auto;
+}
+
+

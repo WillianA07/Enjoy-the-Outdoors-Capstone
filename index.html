@@ -9,15 +9,15 @@
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Explore Nature</title>
 </head>
 
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg height-10vh">
             <div class="container">
-                <a class="navbar-brand" href="#">Explore Nature</a>
+                <a class="navbar-brand text-light" href="index.html">Explore Nature</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -26,10 +26,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="parks.html">Parks</a>
+                            <a class="nav-link text-light" href="parks.html">Parks</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="mountains.html">Moutains</a>
+                            <a class="nav-link text-light" href="mountains.html">Mountains</a>
                         </li>
                     </ul>
                 </div>
@@ -38,7 +38,25 @@
     </header>
 
     <main>
+        <div class="container text-center txtCenter ">
+            <div class="row">
+                <h1 class="display-1 text-dark mb-4">Get Ready to Discover Natural Beauty</h1>
+            </div>
 
+            <div class="row">
+                <q class="text-dark my-5">Leave home, leave the country, leave the familiar. Only then can routine experience—buying bread, eating vegetables, even saying hello—become new all over again.</q>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <a href="parks.html"><button id="parkBtn" type="button" class="btn">National Parks</button></a>
+                </div>
+
+                <div class="col-sm-6">
+                    <a href="mountains.html"><button id="mountBtn" type="button" class="btn">Mountains</button></a>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
