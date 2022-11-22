@@ -8,13 +8,14 @@ function init() {
     document.getElementById("filterBtn").style.display = "none";
     document.getElementById("locationRadio").onclick = addLocationOpts;
     document.getElementById("parkTypeRadio").onclick = addParkTypeOpts;
+    document.getElementById("allParksRadio").onclick = addAllParksOpts;
     document.getElementById("filterBtn").onclick = finalFilterBtnOnClicked;
-
 }
 
 function addLocationOpts() {
     showDropdown();
     showFilterBtn();
+    clearingCards();
     const searchTypeDropdown = document.getElementById("searchTypeDropdown");
     searchTypeDropdown.length = 0;
 
@@ -34,6 +35,7 @@ function addLocationOpts() {
 function addParkTypeOpts() {
     showDropdown();
     showFilterBtn();
+    clearingCards();
     const searchTypeDropdown = document.getElementById("searchTypeDropdown");
     searchTypeDropdown.length = 0;
 
@@ -50,6 +52,27 @@ function addParkTypeOpts() {
     }
 }
 
+function addAllParksOpts() {
+    showDropdown();
+    showFilterBtn();
+    clearingCards();
+    
+    const searchTypeDropdown = document.getElementById("searchTypeDropdown");
+    searchTypeDropdown.length = 0;
+
+    let defaultOpt = document.createElement("option");
+    defaultOpt.value = "";
+    defaultOpt.textContent = "Please Choose a Park";
+    searchTypeDropdown.appendChild(defaultOpt);
+
+    for ( let park of nationalParksArray ) {
+        let parkOpts = document.createElement("option");
+        parkOpts.value = park.LocationID;
+        parkOpts.textContent = park.LocationName;
+        searchTypeDropdown.appendChild(parkOpts);
+    }
+}
+
 function showDropdown() {
     document.getElementById("searchTypeDropdown").style.display = "block";
 }
@@ -61,6 +84,7 @@ function showFilterBtn() {
 function finalFilterBtnOnClicked() {
     const locationRadioChecked = document.getElementById("locationRadio").checked;
     const parkTypeRadioChecked = document.getElementById("parkTypeRadio").checked;
+    const allParksRadio = document.getElementById("allParksRadio").checked;
 
         if ( locationRadioChecked ) {
             clearingCards();
@@ -70,7 +94,11 @@ function finalFilterBtnOnClicked() {
             clearingCards();
             filterByParkType();
         }
-    }
+        else if ( allParksRadio ) {
+            clearingCards();
+            showSpecificPark();
+        }
+}
 
 function filterByLocation() {
     const searchTypeDropdown = document.getElementById("searchTypeDropdown");
@@ -90,14 +118,25 @@ function filterByParkType() {
     filterByParkType.forEach( (x) => { createCard(x) });
 }
 
+function showSpecificPark() {
+    const searchTypeDropdown = document.getElementById("searchTypeDropdown");
+    let dropdownValue = searchTypeDropdown.value;
+
+    let specificPark = nationalParksArray.find( (x) => x.LocationID == dropdownValue && createCard(x) );
+}
+
 function createCard(park) {
     const divForResults = document.getElementById("divForResults");
 
-    let divWithCardClass = document.createElement("div");
-    divWithCardClass.className = "card col-4 setCardMinSize";
-    divForResults.appendChild(divWithCardClass);
+    let divForColumn = document.createElement("div");
+    divForColumn.className = "col-4";
+    divForResults.appendChild(divForColumn);
 
-    // divWithCardClass.style.display = "inline-block";
+    let divWithCardClass = document.createElement("div");
+    divWithCardClass.className = "card setCardMinSize";
+    divForColumn.appendChild(divWithCardClass);
+
+    divWithCardClass.style.display = "inline-block";
 
     let divWithCardBodyClass = document.createElement("div");
     divWithCardBodyClass.id = "toAddVisitBtn";

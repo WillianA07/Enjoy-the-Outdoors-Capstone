@@ -1,13 +1,12 @@
-body {
+#defaultBgImg {
     background-image: url("/images/home.png");
-    background-position: absolute;
-    background-repeat: no-repeat;
-    background-size: 100vw 100vh;
-
-
-    /* background-image: url("/images/Bond-StoryImage_3.jpg");
-    background-repeat: no-repeat;
-    background-size: 100vw 100vh; */
+    position: fixed;
+    height: 100%; width: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    z-index: -1000;
+    opacity: 0.90;
 }
 
 #parkBtn {
@@ -43,16 +42,10 @@ q {
     background-color: #d8ddcd;
 }
 
-/* .setCardMinSize {
-    width: 20rem;
-    min-height: 20rem;
-    margin: 0;
-    padding: 0;
-} */
 .card{
-    width: 20rem;
-   height: 20rem;
-margin: auto;
+    margin: 1rem 0px;
 }
 
-
+.container {
+    position: relative;
+}

@@ -39,7 +39,7 @@ function displayCardWithMountain() {
     }
 
     let divWithCardClass = document.createElement("div");
-    divWithCardClass.className = "card text-bg-dark";
+    divWithCardClass.className = "card bg-transparent border-0";
     divToPutResults.appendChild(divWithCardClass);
 
     let cardBgImg = document.createElement("img");
@@ -53,23 +53,23 @@ function displayCardWithMountain() {
     divWithCardClass.appendChild(divWithCardText);
 
     let cardTitle = document.createElement("h1");
-    cardTitle.className = "card-title text-dark";
+    cardTitle.className = "card-title text-center";
     cardTitle.textContent = getMountainName(); 
     divWithCardText.appendChild(cardTitle);
 
-    let cardDescriptionText = document.createElement("p")
-    cardDescriptionText.className = "card-text text-dark";
+    let cardDescriptionText = document.createElement("h6")
+    cardDescriptionText.className = "card-text text-center";
     cardDescriptionText.textContent = getMountainDescription();
     divWithCardText.appendChild(cardDescriptionText);
 
-    let cardElevationText = document.createElement("p");
-    cardElevationText.className = "card-text text-dark";
+    let cardElevationText = document.createElement("h6");
+    cardElevationText.className = "card-text text-center";
     cardElevationText.textContent = "Elevation: " + getMountainElevation();
     divWithCardText.appendChild(cardElevationText);
 
     // let showImgOnlyBtn = document.createElement("button");
     // showImgOnlyBtn.className = "btn btn-primary";
-    // showImgOnlyBtn.id = "";
+    // showImgOnlyBtn.id = "showImgOnlyBtn";
     // showImgOnlyBtn.type = "button";
     // divWithCardClass.appendChild(showImgOnlyBtn);
 

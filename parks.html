@@ -39,6 +39,8 @@
 
     <main>
 
+        <div id="defaultBgImg"></div>
+
         <div class="container">
             <div class="row">
                 <h1 class="display-1 text-center text-light">Which Park Are You Visiting</h1>
@@ -58,6 +60,11 @@
                     <input type="radio" name="searchType" id="parkTypeRadio">
                     <label for="parkTypeRadio" class="form-label text-light">Park Type</label>
                 </div>
+
+                <div class="col">
+                    <input type="radio" name="searchType" id="allParksRadio">
+                    <label for="allParksRadio" class="form-label text-light">View All Parks</label>
+                </div>
             </div>
 
             <div class="row">
@@ -74,11 +81,7 @@
 
             <div class="row"></div>
 
-            <div class="row">
-                <div id="divForResults" class="mb-3 d-flex flex-wrap flex-column align-items-stretch">
-
-                </div>
-            </div>
+            <div id="divForResults" class="row"></div>
         </div>
 
     </main>
